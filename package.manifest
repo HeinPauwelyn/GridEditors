@@ -1,0 +1,30 @@
+﻿{
+  "gridEditors": [
+    {
+      "name": "Code",
+      "alias": "code",
+      "view": "/App_plugins/GridEditors/code.html",
+      "render": "/app_plugins/GridEditors/code.cshtml",
+      "icon": "icon-code",
+      "config": {
+        "style": "font-size: 32px; line-height: 45px; font-weight: bold",
+        "markup": "<pre>#value#</pre>"
+      }
+    },
+    {
+      "name": "Table",
+      "alias": "table",
+      "view": "/App_plugins/GridEditors/table.html",
+      "render": "/app_plugins/GridEditors/table.cshtml",
+      "icon": "icon-grid"
+    }
+  ],
+  "javascript": [
+    "/app_plugins/GridEditors/code.js",
+    "/app_plugins/GridEditors/table.js"
+  ],
+  "css": [
+    "/app_plugins/GridEditors/code.css",
+    "/app_plugins/GridEditors/table.css"
+  ]
+}

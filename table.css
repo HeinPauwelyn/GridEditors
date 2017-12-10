@@ -1,0 +1,18 @@
+﻿table {
+    width: 100%;
+}
+
+    table td {
+        border: 1px solid black;
+        height: 20px;
+    }
+
+        table td input {
+            width: 100%;
+            border: none !important;
+            margin: 0 !important;
+        }
+
+            table td input:active {
+                border: none;
+            }

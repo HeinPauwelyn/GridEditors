@@ -1,0 +1,30 @@
+﻿<div ng-controller="my.grideditorcontroller.table">
+
+    <div class="btn-group">
+        <button class="btn btn-default" ng-click="addRow()" type="button">Add row</button>
+        <button class="btn btn-default" ng-click="addColl()" type="button">Add coll</button>
+    </div>
+
+    <table>
+        <tr ng-repeat="r in range(0, control.rows)">
+            <td ng-repeat="c in range(0, control.colls)">
+                <input type="text" 
+                       ng-change="updateCell(this, r * (control.colls + 1) + c)" 
+                       ng-model="control.cells[r * (control.colls + 1) + c]" 
+                       ng-right-click="toggleContextmenu(r * (control.colls + 1) + c)" />
+
+                <div ng-show="contextMenu[r * (control.colls + 1) + c]">
+                    <ul>
+                        <li><a ng-click="removeColl(c)">Remove coll</a></li>
+                        <li><a ng-click="removeRow(r)">Remove row</a></li> 
+                        <li>Add coll left</li>
+                        <li>Add coll right</li>
+                        <li>Add row below</li>
+                        <li>Add row above</li>
+                        <li>Add link</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Newtonsoft.Json.Linq;
+
+@{ 
+    int rows = Model.rows;
+    int colls = Model.colls;
+    JArray cells = Model.cells;
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        @for (int ri = 0; ri <= rows; ri++)
+        {
+            <tr>
+                @for (int ci = 0; ci <= colls; ci++)
+                {
+                    <td>@cells[ri * (colls + 1) + ci]</td>
+                }
+            </tr>
+        }
+    </table>
+</div>
