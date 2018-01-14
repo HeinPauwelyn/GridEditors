@@ -1,9 +1,14 @@
 ﻿<div ng-controller="my.grideditorcontroller.code">
-    <select ng-model="control.language">
-        <option value="csharp">C#</option>
-        <option value="js">JS</option>
-        <option value="vb">VB</option>
-        <option value="java">Java</option>
-    </select>
-    <textarea rows="1" ng-model="control.value" class="code"></textarea>
+    <div class="GridEditors">
+        <select ng-model="control.language">
+            <option value="csharp">C#</option>
+            <option value="js">JavaScript</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="vb">Visual Basic</option>
+            <option value="java">Java</option>
+            <option value="sql">SQL</option>
+        </select>
+        <div contentEditable="true" ng-model="control.value" class="code"></div>
+    </div>
 </div>

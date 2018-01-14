@@ -13,6 +13,7 @@ app.directive('ngRightClick', function ($parse) {
 });
 
 app.controller("my.grideditorcontroller.table", function ($scope) {
+    document.getElementById("tablegrid-controller").parentElement.parentElement.parentElement.style.overflow = "visible";
 
     $scope.contextMenu = [];
 
@@ -41,7 +42,12 @@ app.controller("my.grideditorcontroller.table", function ($scope) {
     $scope.toggleContextmenu = function (cellIndex) {
         for (var i = $scope.contextMenu.length; i >= 0; i--) {
 
-            $scope.contextMenu[i] = (i === cellIndex);
+            if (i === cellIndex) {
+                $scope.contextMenu[i] = !$scope.contextMenu[i];
+            }
+            else {
+                $scope.contextMenu[i] = false;
+            }
         }
         console.log($scope.contextMenu);
     };
@@ -50,19 +56,33 @@ app.controller("my.grideditorcontroller.table", function ($scope) {
 
     };
 
-    $scope.addRow = function () {
+    $scope.addRow = function (location) {
         $scope.control.rows += 1;
+    
+        var newArray = [],
+            rowCounter = 0;
+        
+        for (var i = 0; i < $scope.control.cells.length; i++) {
 
-        for (var i = $scope.control.colls; i--;) {
-            $scope.control.cells.push('');
+            newArray.push($scope.control.cells[i]);
+
+            if (i % $scope.control.rows === location - 1 && rowCounter++ === location) {
+       
+                for (var ci = 0; ci <= $scope.control.colls; ci++) {
+                    newArray.push('');
+                }
+            }
         }
+
+        $scope.control.cells = newArray;
+        $scope.toggleContextmenu(-1);
     };
 
     $scope.removeColl = function (collIndex) {
 
     };
 
-    $scope.addColl = function () {
+    $scope.addColl = function (location) {
         $scope.control.colls += 1;
 
         var newArray = [];
@@ -71,12 +91,13 @@ app.controller("my.grideditorcontroller.table", function ($scope) {
 
             newArray.push($scope.control.cells[i]);
 
-            if (i % $scope.control.colls === $scope.control.colls - 1) {
+            if (i % $scope.control.colls === location - 1) {
                 newArray.push('');
             }
         }
 
         $scope.control.cells = newArray;
+        $scope.toggleContextmenu(-1);
     };
 
     $scope.updateCell = function (that, cellIndex) {

@@ -1,18 +1,58 @@
-﻿table {
-    width: 100%;
+﻿.GridEditors .btn-group {
+    margin-bottom: 5px;
 }
 
-    table td {
+.GridEditors table {
+    width: 100%;
+    overflow: visible;
+}
+
+    .GridEditors table td {
         border: 1px solid black;
         height: 20px;
     }
+        .GridEditors table tr:first-child input {
+            font-weight: bolder;
+            text-align: center;
+        }
 
-        table td input {
+        .GridEditors table td input {
             width: 100%;
             border: none !important;
             margin: 0 !important;
         }
 
-            table td input:active {
+            .GridEditors table td input:active {
                 border: none;
+            }
+
+.GridEditors ul.context-menu {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #d8d7d9;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999999;
+}
+
+        .GridEditors ul.context-menu li a {
+            display: block;
+            width: 100%;
+            padding: 5px 20px 5px 10px;
+        }
+
+        .GridEditors ul.context-menu li.separator {
+            border-top: 1px solid #d8d7d9;
+            height: 0;
+            padding: 0;
+        }
+
+        .GridEditors ul.context-menu li:hover {
+            background-color: #f3f3f5;
+        }
+
+            .GridEditors ul.context-menu li:hover a {
+                text-decoration: none;
+                cursor: pointer;
             }

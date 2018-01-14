@@ -1,7 +1,21 @@
-﻿.code {
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100px;
+﻿.GridEditors {
+    padding: 5px;
+}
+
+.GridEditors .code {
+    min-width: 99%;
+    max-width: 99%;
     font-family: Consolas;
+    border: 1px solid gray;
+    background-color: #eee;
+    border-radius: 2px;
+    resize: vertical;
+    display: inline-block;
+    min-height: 10px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.GridEditors .code:active {
     border: none;
 }

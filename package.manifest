@@ -5,11 +5,7 @@
       "alias": "code",
       "view": "/App_plugins/GridEditors/code.html",
       "render": "/app_plugins/GridEditors/code.cshtml",
-      "icon": "icon-code",
-      "config": {
-        "style": "font-size: 32px; line-height: 45px; font-weight: bold",
-        "markup": "<pre>#value#</pre>"
-      }
+      "icon": "icon-code"
     },
     {
       "name": "Table",
@@ -17,14 +13,32 @@
       "view": "/App_plugins/GridEditors/table.html",
       "render": "/app_plugins/GridEditors/table.cshtml",
       "icon": "icon-grid"
+    },
+    {
+      "name": "Heading 2",
+      "alias": "heading2",
+      "view": "/App_plugins/GridEditors/h2.html",
+      "render": "/App_plugins/GridEditors/h2.cshtml",
+      "icon": "icon-coin"
+    },
+    {
+      "name": "Heading 3",
+      "alias": "heading3",
+      "view": "/App_plugins/GridEditors/h3.html",
+      "render": "/App_plugins/GridEditors/h3.cshtml",
+      "icon": "icon-coin"
     }
   ],
   "javascript": [
     "/app_plugins/GridEditors/code.js",
-    "/app_plugins/GridEditors/table.js"
+    "/app_plugins/GridEditors/table.js",
+    "/app_plugins/GridEditors/h2.js",
+    "/app_plugins/GridEditors/h3.js"
   ],
   "css": [
     "/app_plugins/GridEditors/code.css",
-    "/app_plugins/GridEditors/table.css"
+    "/app_plugins/GridEditors/table.css",
+    "/app_plugins/GridEditors/h2.css",
+    "/app_plugins/GridEditors/h3.css"
   ]
 }

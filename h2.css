@@ -1,0 +1,12 @@
+﻿input.GridEditors.h2 {
+    display: block;
+    overflow: hidden;
+    border: none;
+    background: #fff;
+    outline: none;
+    resize: none;
+    color: #515054;
+    width: 100%;
+    font-size: 26px;
+    padding: 5px 10px;
+}

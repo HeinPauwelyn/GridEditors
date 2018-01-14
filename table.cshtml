@@ -14,7 +14,14 @@
             <tr>
                 @for (int ci = 0; ci <= colls; ci++)
                 {
-                    <td>@cells[ri * (colls + 1) + ci]</td>
+                    if (ri == 0)
+                    {
+                        <th>@cells[ri * (colls + 1) + ci]</th>
+                    }
+                    else
+                    {
+                        <td>@cells[ri * (colls + 1) + ci]</td>
+                    }
                 }
             </tr>
         }
